@@ -3,9 +3,9 @@
     tag="div"
     class="mx-0"
     fluid>
-        <v-card-field class="text-h1 px-40">
+        <div class="text-h1 px-40">
             Начни поиск прямо сейчас
-        </v-card-field>
+        </div>
         <v-stepper alt-labels v-model="e1">
             <v-stepper-header>
                 <div v-for="step in steps_amount" :key="step" >

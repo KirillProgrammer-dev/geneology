@@ -29,7 +29,7 @@
                 class="mx-10"
                 >
                     <v-img height="300" src="http://nashkraj.info/wp-content/uploads/2018/02/Semejnoe-vospitanie-na-Turovshhine-v-XIX-veke-1.jpg"></v-img>
-                    <v-card-title>Форум для облегчения<br> поиска своих предков</v-card-title>
+                    <v-card-title>Множество фотоальбомов<br> для поиска соответствий со своей семьей</v-card-title>
                     <v-card-actions>
                         <v-btn color="deep-orange accent-3 white--text">Подробнее</v-btn>
                     </v-card-actions>

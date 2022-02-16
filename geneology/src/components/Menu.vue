@@ -1,12 +1,13 @@
 <template>
     <v-navigation-drawer
-        color="green"
+        color="deep-orange accent-3 white--text"
         dark
         expand-on-hover
         hide-overlay
         permanent
         right
         absolute
+        fixed
       >
         <v-list
             nav 
@@ -23,29 +24,55 @@
             </v-list-item-content>
           </v-list-item>
           <v-divider class="my-3" />
+          <v-list-item v-if="registrate" @click="logOut()">
+            <v-list-item-icon>
+              <v-icon>mdi-logout</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title class="text-left">Выйти</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <div v-else>
+            <v-list-item link to="/login">
+              <v-list-item-icon>
+                <v-icon>mdi-login</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title class="text-left">Войти</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item link to="/registration">
+              <v-list-item-icon>
+                <v-icon>mdi-account-plus</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title class="text-left">Регистрация</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </div>
           <v-list-item :to="'/'">
             <v-list-item-icon>
               <v-icon> mdi-home-outline </v-icon>
             </v-list-item-icon>
-            <v-list-content>
+            <v-list-item-content>
               <v-list-item-title class="text-left">Главная</v-list-item-title>
-            </v-list-content>
+            </v-list-item-content>
           </v-list-item>
-           <v-list-item :to="'/profile'">
+           <v-list-item :to="'/profile'" v-if="registrate">
             <v-list-item-icon>
               <v-icon> mdi-account-outline </v-icon>
             </v-list-item-icon>
-            <v-list-content>
+            <v-list-item-content>
               <v-list-item-title class="text-left">Мой профиль</v-list-item-title>
-            </v-list-content>
+            </v-list-item-content>
           </v-list-item>
            <v-list-item :to="'/search'">
             <v-list-item-icon>
               <v-icon> mdi-account-multiple-plus-outline </v-icon>
             </v-list-item-icon>
-            <v-list-content>
-              <v-list-item-title class="text-left">Найти друзей</v-list-item-title>
-            </v-list-content>
+            <v-list-item-content>
+              <v-list-item-title class="text-left">Дугие профили</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
@@ -56,5 +83,11 @@ import Vue from 'vue'
 
 export default Vue.extend({
     name: "Menu",
+    data: () => ({
+    }),
+    props:["registrate"],
+    mounted(){
+      console.log(this.colors);
+    }
 })
 </script>

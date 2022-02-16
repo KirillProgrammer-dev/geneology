@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <Menu :colors="getColors"/>
     <Banner/>
     <v-container fluid class="d-flex justify-center mb-6 grey lighten-5 mx-0">
       <Search style="width: 50em"/>
@@ -18,11 +19,16 @@ import FirstHomesBlock from '../components/FirstHomesBlock.vue'
 
 export default Vue.extend({
     name: 'Home',
-
+    props: ["colors"],
     components: {
       Banner,
       Search,
       FirstHomesBlock,
     },
+    computed:{
+      getColors(){
+        return this.colors;
+      }
+    }
 })
 </script>
